@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Calculator</title>
   </head>
   <body>
     <h1>Calculator</h1>
-    <script src="js/scripts.js"></script>
     <div class="container-fluid row">
-      <input type="submit" class="show-original">
-      <div class="col original">        
-        <p>Testing</p>
+      
+      <div class="col original">  
+        <input type="button" value="Submit" id="show-original">    
+        <script></script>  
+        <p id="original-sentence">
+          <script>
+            document.getElementById("original-sentence").innerHTML = sentence;
+          </script>
+        </p>
+      </div>
+      <div class = "col ciphered-sentence">
+        <input type="button" value="Submit" id="show-cipher">
+        <p id="cipher">
+          <script>
+            document.getElementById("cipher").innerHTML = outputSentence;
+          </script>
+        </p>
       </div>
     </div>
   </body>

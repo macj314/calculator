@@ -1,3 +1,4 @@
+
 var cap;
 var sentence = prompt("Please enter a sentence");	
 function capture(string) {
@@ -33,13 +34,24 @@ function count(outputSentence) {
   var reverseOutput = output.split("");
 	reverseOutput = reverseOutput.reverse();
 	reverseOutput = reverseOutput.join("");
-  // alert(reverseOutput);
+	// alert(reverseOutput);
+	return reverseOutput;
 }
 
 var outputSentence = combine(capture, reverse);
-count(outputSentence);
+outputSentence = count(outputSentence);
 
+$(document).ready(function() {
+	$("#original-sentence").hide();
+	$("#cipher").hide();
 
-$(".show-original").click(function() {
-  $(".original").hide();
+  $("#show-original").click(function() {
+		$("#original-sentence").show();
+		$("#cipher").hide();
+	});
+	
+	$("#show-cipher").click(function() {
+		$("#original-sentence").hide();
+		$("#cipher").show();
+	});
 });
