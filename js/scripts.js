@@ -1,57 +1,59 @@
+// Business (or back-end) logic:
 
-var cap;
-var sentence = prompt("Please enter a sentence");	
-function capture(string) {
-	// alert(sentence);
-	cap = sentence.charAt(0);
-	cap += sentence.charAt(sentence.length-1);
-	cap = cap.toUpperCase();
-	// alert(cap);
-	return cap;
-}
+var add = function(number1, number2) {
+  return number1 + number2;
+};
 
-function reverse(string){
-	var reverse = cap.charAt(1) + cap.charAt(0)
-	// alert(reverse);
-	return reverse
-}
+var subtract = function(number1, number2) {
+  return number1 - number2;
+};
 
-function combine(capture, reverse){
-	var result = capture();
-	result = reverse(result);
-	result = sentence + result
-	// alert(result);
-	return result;
-}
+var multiply = function(number1, number2) {
+  return number1 * number2;
+};
 
-function count(outputSentence) {
-  var index = sentence.length - 1;
-  index /= 2;
-  var letter = sentence.charAt(index);
-  var output = letter + outputSentence;
-  // alert(output);
+var divide = function(number1, number2) {
+  return number1 / number2;
+};
 
-  var reverseOutput = output.split("");
-	reverseOutput = reverseOutput.reverse();
-	reverseOutput = reverseOutput.join("");
-	// alert(reverseOutput);
-	return reverseOutput;
-}
-
-var outputSentence = combine(capture, reverse);
-outputSentence = count(outputSentence);
+// User interface (or front-end) logic:
 
 $(document).ready(function() {
-	$("#original-sentence").hide();
-	$("#cipher").hide();
+  $("form#add").submit(function(event) {
+   event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = add(number1, number2);
+    $("#output").text(result);
+  });
+});
 
-  $("#show-original").click(function() {
-		$("#original-sentence").show();
-		$("#cipher").hide();
-	});
-	
-	$("#show-cipher").click(function() {
-		$("#original-sentence").hide();
-		$("#cipher").show();
-	});
+$(document).ready(function() {
+  $("form#sub").submit(function(event) {
+   event.preventDefault();
+    var number1 = parseInt($("#sub1").val());
+    var number2 = parseInt($("#sub2").val());
+    var result = subtract(number1, number2);
+    $("#output").text(result);
+  });
+});
+
+$(document).ready(function() {
+  $("form#mul").submit(function(event) {
+   event.preventDefault();
+    var number1 = parseInt($("#mul1").val());
+    var number2 = parseInt($("#mul2").val());
+    var result = multiply(number1, number2);
+    $("#output").text(result);
+  });
+});
+
+$(document).ready(function() {
+  $("form#divide").submit(function(event) {
+   event.preventDefault();
+    var number1 = parseInt($("#divide1").val());
+    var number2 = parseInt($("#divide2").val());
+    var result = divide(number1, number2);
+    $("#output").text(result);
+  });
 });

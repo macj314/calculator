@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Calculator</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Calculator</title>
   </head>
   <body>
-    <h1>Calculator</h1>
-    <div class="container-fluid row">
+    <div class="container">
+      <h1>Calculator</h1>
+      <form id="add">
+        <div class="form-group">
+          <label for="add1">1st number:</label>
+          <input id="add1" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="add2">2nd number:</label>
+          <input id="add2" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn">Add!</button>
+      </form>
+
+      <form id="sub">
+        <div class="form-group">
+          <label for="sub1">1st number:</label>
+          <input id="sub1" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="sub2">2nd number:</label>
+          <input id="sub2" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn">Subtract</button>
+      </form>
+
+      <form id="mul">
+        <div class="form-group">
+          <label for="mul1">1st number:</label>
+          <input id="mul1" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="mul2">2nd number:</label>
+          <input id="mul2" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn">Multiply</button>
+      </form>
+
+      <form id="divide">
+        <div class="form-group">
+          <label for="divide1">1st number:</label>
+          <input id="divide1" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="divide2">2nd number:</label>
+          <input id="divide2" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn">Divide</button>
+      </form>
       
-      <div class="col original">  
-        <input type="button" value="Submit" id="show-original">    
-        <script></script>  
-        <p id="original-sentence">
-          <script>
-            document.getElementById("original-sentence").innerHTML = sentence;
-          </script>
-        </p>
-      </div>
-      <div class = "col ciphered-sentence">
-        <input type="button" value="Submit" id="show-cipher">
-        <p id="cipher">
-          <script>
-            document.getElementById("cipher").innerHTML = outputSentence;
-          </script>
-        </p>
+      <div id="output">
+        
       </div>
     </div>
   </body>
